@@ -15,15 +15,13 @@ class Item {
 }
 
 export default class ApplicationController extends Controller {
-  items = [
-    new Item('Try resizing to add more items')
-  ];
+  items = [new Item('Try resizing to add more items')];
 
   #itemNumber = 1;
 
   @action
   addItem() {
-    const message = `${Date.now()}: Item #${this.#itemNumber}`
+    const message = `${Date.now()}: Item #${this.#itemNumber}`;
     this.items.pushObject(new Item(message));
     console.log('addItem called', message);
     this.#itemNumber++;
